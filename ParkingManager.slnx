@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ParkingManager.Tests/ParkingManager.Tests.csproj" Id="1d9be374-bd19-4c88-8cad-360ce2afd360" />
+  <Project Path="ParkingManager/ParkingManager.csproj" />
+</Solution>

@@ -4,3 +4,5 @@
 
 /ParkingManager/bin/Debug/net10.0
 /ParkingManager/obj
+/ParkingManager.Tests/bin/Debug/net10.0
+/ParkingManager.Tests/obj

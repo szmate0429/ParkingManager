@@ -10,7 +10,7 @@
       - "1521:1521"
     volumes:
       - oracle_data:/opt/oracle/oradata
-      - ./init-scripts:/container-entrypoint-initdb.d
+      - ./ParkingManager/init-scripts:/container-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "healthcheck.sh"]
       interval: 10s
@@ -19,14 +19,14 @@
 
   parking-app:
     build: 
-      context: .
+      context: ./ParkingManager
       dockerfile: Dockerfile
     container_name: parking_app
     depends_on:
       oracle-db:
         condition: service_healthy
     environment:
-      - ConnectionStrings__OracleDb=Data Source=oracle-db:1521/FREEPDB1;User Id=parking_user;Password=ParkingPassword123!;
+      - ConnectionStrings__OracleDb=Data Source=parking_oracle_db:1521/FREEPDB1;User Id=parking_user;Password=ParkingPassword123!;
     stdin_open: true 
     tty: true        
 volumes:
