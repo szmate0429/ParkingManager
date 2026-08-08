@@ -89,9 +89,7 @@ public class Program
         Console.Write("Válassz egy menüpontot: ");
     }
 
-    // ============================================================
     // 1. Parkolóhelyek listázása
-    // ============================================================
 
     private static async Task ListParkingSpotsAsync()
     {
@@ -113,9 +111,7 @@ public class Program
         }
     }
 
-    // ============================================================
     // 2. Adott hely foglalásainak lekérdezése
-    // ============================================================
 
     private static async Task GetReservationsBySpotAsync()
     {
@@ -143,9 +139,7 @@ public class Program
         }
     }
 
-    // ============================================================
     // 3. Új foglalás rögzítése
-    // ============================================================
 
     private static async Task CreateReservationAsync()
     {
@@ -162,8 +156,7 @@ public class Program
         DateTime end = ReadDateTime(
             "Záró időpont (yyyy-MM-dd HH:mm): ");
 
-        // Először lekérjük a parkolóhelyet,
-        // hogy tudjuk, milyen típusú.
+        // Először lekérjük a parkolóhelyet
         var spot = await GetSpotForReservationAsync(spotId);
 
         if (spot == null)
@@ -175,7 +168,6 @@ public class Program
         bool isElectricVehicle = false;
 
         // Mozgáskorlátozott hely esetén
-        // megkérdezzük, rendelkezik-e igazolvánnyal.
         if (spot.SpotType == "DISABLED")
         {
             hasDisabledBadge = ReadYesNo(
@@ -183,7 +175,6 @@ public class Program
         }
 
         // Elektromos töltőhely esetén
-        // megkérdezzük, hogy elektromos-e a jármű.
         if (spot.SpotType == "EV_CHARGING")
         {
             isElectricVehicle = ReadYesNo(
@@ -215,9 +206,7 @@ public class Program
         }
     }
 
-    // ============================================================
     // 4. Foglalás lemondása
-    // ============================================================
 
     private static async Task CancelReservationAsync()
     {
@@ -399,11 +388,6 @@ public class Program
     private static async Task<ParkingSpot?> GetSpotForReservationAsync(
         int spotId)
     {
-        // Ha a ParkingService-ben még nincs ilyen metódus,
-        // érdemes hozzáadni:
-        //
-
-
         var spot =
             await _parkingService.GetSpotByIdAsync(spotId);
 
