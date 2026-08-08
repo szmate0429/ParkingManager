@@ -13,7 +13,7 @@ namespace ParkingManager.Data
         }
 
 
-        public async Task<IEnumerable<ParkingSpot>> GetActiveParkingSpotsAsync()
+        public async Task<IEnumerable<ParkingSpot>> GetParkingSpotsAsync()
         {
             using var db = _connectionFactory.CreateConnection();
             const string sql = @"SELECT Id, Code,SpotType

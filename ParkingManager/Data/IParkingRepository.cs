@@ -4,7 +4,7 @@ namespace ParkingManager.Data
 {
     public interface IParkingRepository
     {
-        Task<IEnumerable<ParkingSpot>> GetActiveParkingSpotsAsync();
+        Task<IEnumerable<ParkingSpot>> GetParkingSpotsAsync();
         Task<ParkingSpot?> GetSpotByIdAsync(int spotId);
         Task<IEnumerable<Reservation>> GetReservationsBySpotAsync(int spotId);
         Task<IEnumerable<Reservation>> GetReservationsByUserSpotAsync(int spotId, string requesterEmail);

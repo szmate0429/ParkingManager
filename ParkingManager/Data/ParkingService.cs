@@ -11,9 +11,9 @@ namespace ParkingManager.Data
             _repository = repository;
         }
 
-        public async Task<IEnumerable<ParkingSpot>> GetActiveParkingSpotsAsync()
+        public async Task<IEnumerable<ParkingSpot>> GetParkingSpotsAsync()
         {
-            return await _repository.GetActiveParkingSpotsAsync();
+            return await _repository.GetParkingSpotsAsync();
         }
 
         public async Task<IEnumerable<Reservation>> GetReservationsBySpotAsync(int spotId)

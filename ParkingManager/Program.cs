@@ -97,7 +97,7 @@ public class Program
     {
         Console.WriteLine("=== PARKOLÓHELYEK ===");
 
-        var spots = await _parkingService.GetActiveParkingSpotsAsync();
+        var spots = await _parkingService.GetParkingSpotsAsync();
 
         foreach (var spot in spots)
         {
